@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>   <!-- navigation이 가능한 header bar라는 것. -->
+      <button ion-button menuToggle>  <!--이 버튼을 눌렀을 때 sidemenu를 띄울 수 있게 됨. 여기서 'menuToggle'이 없으면 menu가 한 번만 가능함..sidemenu를 계속 사용하려면 menuToggle 써주어야 한다. -->
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>조회</ion-title>
+      <ion-buttons end>    
+          <button ion-button (click)="goTo()">
+            <ion-icon name='search'></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+<ion-list>
+    <ion-item>
+      <ion-label color="primary">모델명</ion-label>
+      <ion-input type="text" [(ngModel)]="model" (blur)="doBlur()" (focus)="doFocus()" placeholder="모델명을 입력해 주세요."></ion-input>
+    </ion-item>
+  
+    <ion-item>
+        <ion-label color="primary">수량</ion-label>
+        <ion-input type="text" [(ngModel)]="quantity" (blur)="doBlur()" (focus)="doFocus()" placeholder="수량을 입력해 주세요."></ion-input>
+      </ion-item>
+
+    <ion-item>
+          <ion-label color="primary">위치</ion-label>
+          <ion-select [(ngModel)]="location">
+            <ion-option value="a">a-1</ion-option>
+            <ion-option value="b">b-1</ion-option>
+            <ion-option value="c">c-1</ion-option>
+          </ion-select>
+    </ion-item>
+      
+      <button ion-button block (click)="savestock()">Save</button>
+  
+    </ion-list>
+</ion-content>

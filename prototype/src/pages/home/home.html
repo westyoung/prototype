@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>   <!-- navigation이 가능한 header bar라는 것. -->
+      <button ion-button menuToggle>  <!--이 버튼을 눌렀을 때 sidemenu를 띄울 수 있게 됨. 여기서 'menuToggle'이 없으면 menu가 한 번만 가능함..sidemenu를 계속 사용하려면 menuToggle 써주어야 한다. -->
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home Page</ion-title>
+      <ion-buttons end>    
+        <button ion-button (click)="goTo()">
+          <ion-icon name='search'></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+   <img src="https://pbs.twimg.com/media/DCMz_KHUAAAdRoA.jpg">
+  </ion-content>

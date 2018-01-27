@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>   <!-- navigation이 가능한 header bar라는 것. -->
+      <button ion-button menuToggle>  <!--이 버튼을 눌렀을 때 sidemenu를 띄울 수 있게 됨. 여기서 'menuToggle'이 없으면 menu가 한 번만 가능함..sidemenu를 계속 사용하려면 menuToggle 써주어야 한다. -->
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Input Page</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-list>
+        <ion-item>
+                <ion-label color="{{labelColor}}" floating>회사 코드</ion-label>
+                <ion-input type="text" [(ngModel)]="code" (blur)="doBlur()" (focus)="doFocus()"></ion-input>
+        </ion-item>
+          <ion-item>
+              <ion-label color="{{labelColor}}" floating>Username</ion-label>
+              <ion-input type="text" [(ngModel)]="username" (blur)="doBlur()" (focus)="doFocus()"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+      </ion-list>
+      <button ion-button block (click)="signIn()">Sign In</button>
+  </ion-content>

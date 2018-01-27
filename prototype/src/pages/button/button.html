@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>   <!-- navigation이 가능한 header bar라는 것. -->
+      <button ion-button menuToggle>  <!--이 버튼을 눌렀을 때 sidemenu를 띄울 수 있게 됨. 여기서 'menuToggle'이 없으면 menu가 한 번만 가능함..sidemenu를 계속 사용하려면 menuToggle 써주어야 한다. -->
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>조회</ion-title>
+      <ion-buttons end>    
+          <button ion-button (click)="goTo()">
+            <ion-icon name='search'></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+      <ion-card>
+          <ion-card-header>
+            목록
+          </ion-card-header>
+        
+          <ion-list>
+            <button ion-item (click)="add()">
+              <ion-icon name="add" item-start></ion-icon>
+              입고
+            </button>
+        
+            <button ion-item (click)="remove()">
+              <ion-icon name="remove" item-start></ion-icon>
+              출고
+            </button>
+        
+            <button ion-item (click)="record()">
+              <ion-icon name="build"  item-start></ion-icon>
+              이력 조회
+            </button>
+        
+            <button ion-item>
+              <ion-icon name="camera" item-start></ion-icon>
+              태깅
+            </button>
+
+        
+          </ion-list>
+        </ion-card>
+        
+  </ion-content>
