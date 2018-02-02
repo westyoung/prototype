@@ -26,6 +26,7 @@ export class AddstockPage {
       this.navCtrl.push('SuccessPage', {
           model: this.model,
           quantity: this.quantity,
+          location: this.location
       
       });
   }

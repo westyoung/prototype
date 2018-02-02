@@ -13,30 +13,43 @@ export class SearchPage {
 
   searchQuery: string = '';
   items: string[];
+  tt: string = "test";
+  numb: number = 0;
 
   constructor() {
     this.initializeItems();
   }
 
   initializeItems() {
-    this.items = [
-    ];
-  }
 
-  get(){
     let firestore = firebase.firestore();
     const itemRef = firestore.collection("items");
 
-    const query = itemRef.where("quantity",">","1")
+
+    itemRef.where("quantity", ">", "0")
     .get()
-    .then(function(querySnapshot){
-      querySnapshot.forEach(function(doc){
-        console.log(doc.id, " => ", this.initializeItems());
-      });
-    })
-    .catch(function(error){
-      console.log("Error getting documnet")
-    })
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+           console.log(doc.data().model)
+            })
+    });
+
+  }
+
+  
+  test(){
+    let firestore = firebase.firestore();
+    const itemRef = firestore.collection("items");
+
+
+    itemRef.where("quantity", ">", "0")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            console.log(doc.data().model)
+            })
+    });
+  
 
 
   }
